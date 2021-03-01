@@ -21,14 +21,7 @@ class CarsService{
   }
 
   async createCar(rawCar) {
-    // try {
-    //   await api.post('cars', rawCar)
-    //   this.getCars()
-    // } catch (error) {
-    //   console.error(error)
-    // }
-    
-    // NOTE again we could just manually add this to our local data
+  
     try {
       const res = await api.post('cars', rawCar)
       ProxyState.cars = [ ...ProxyState.cars, new Car(res.data)]
